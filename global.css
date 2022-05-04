@@ -5,6 +5,8 @@
     --img-profile: #8257e5;
     --buttons: #FFF;
     --border-button: #1A1A1A;
+
+    font-size: 62.5%;
 }
 
 *, *::after, *::before {
@@ -14,4 +16,9 @@
     box-sizing: border-box;
 
     font-family: 'Prompt', sans-serif;
+}
+
+body {
+    background-color: var(--bg-card);
+    color: var(--text);
 }
