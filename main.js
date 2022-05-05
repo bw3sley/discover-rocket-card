@@ -16,4 +16,16 @@ function ChangeBorderColor() {
     const borderColor = GenerateRandomColors();
     
     const card = document.querySelector("div#card").style.borderColor = borderColor;
-}g
+}
+
+const scrollReveal = ScrollReveal({
+    origin: "top",
+    distance: "32px",
+    duration: 700,
+    reset: true
+});
+
+scrollReveal.reveal(
+    `main, .stats, .right-content`
+    , { interval: 100 }
+);
