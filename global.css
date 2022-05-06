@@ -177,4 +177,10 @@ main .container .right-content button {
     background-color: var(--bg);
 
     cursor: pointer;
+
+    transition: 300ms;
+}
+
+main .container .right-content button:hover {
+    opacity: .7;
 }
