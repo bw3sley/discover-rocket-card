@@ -21,99 +21,29 @@ function ChangeBorderColor() {
 const url = "https://api.github.com/users/bw3sley";
 const token = "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";
 
-function GetUserLocation() {
+function GetGitHubApi(url, token) {
     axios.get(url, {
-        headers: {
-            'Authorization': `token ${token}`
-        }
+        "Authorization": `token ${token}`
     })
     .then(response => {
-        const data = response.data.location;
-
-        const location = data.substring(0, 7);
-
-        const userLocation = document.querySelector("p#location").textContent = location;
+        const location = response.data.location;
+        const company = response.data.company;
+        const login = response.data.login;
+        const followers = response.data.followers;
+        const following = response.data.following;
+        const repos = response.data.public_repos;
+        
+        document.querySelector("p#location").textContent = location.substring(0, 7);
+        document.querySelector("p#company").textContent = `@${company}`;
+        document.querySelector("a#user-github").textContent = login;
+        document.querySelector("p#followers").textContent = `${followers} Seguidores`;
+        document.querySelector("p#following").textContent = `${following} Seguindo`;
+        document.querySelector("p#repos").textContent = `${repos} Repositórios`;
     })
     .catch(error => alert(`Error: ${error}`))
 }
 
-GetUserLocation();
-
-function GetUserCompany() {
-    axios.get(url, {
-        headers: {
-            "Authorization": `token ${token}`
-        }
-    })
-    .then(response => {
-        const data = response.data.company;
-        const userCompany = document.querySelector("#company").textContent = `@${data}`;
-    })
-    .catch(error => alert(`Error: ${error}`))
-}
-
-GetUserCompany();
-
-function GetUserLogin() {
-    axios.get(url, {
-        headers: {
-            "Authorization": `token ${token}`
-        }
-    })
-    .then(response => {
-        const data = response.data.login;
-        const userLogin = document.querySelector("a#user-github").textContent = data;
-    })
-    .catch(error => alert(`Error: ${error}`))
-}
-
-GetUserLogin();
-
-function GetUserFollowers() {
-    axios.get(url, {
-        headers: {
-            "Authorization": `token ${token}`
-        }
-    })
-    .then(response => {
-        const data = response.data.followers;
-        const userFollowers = document.querySelector("p#followers").textContent = `${data} Seguidores`;
-    })
-    .catch(error => alert(`Error: ${error}`))
-}
-
-GetUserFollowers();
-
-function GetUserFollowers() {
-    axios.get(url, {
-        headers: {
-            "Authorization": `token ${token}`
-        }
-    })
-    .then(response => {
-        const data = response.data.following;
-        const userFollowers = document.querySelector("p#following").textContent = `${data} Seguindo`;
-    })
-    .catch(error => alert(`Error: ${error}`))
-}
-
-GetUserFollowers();
-
-function GetUserRepos() {
-    axios.get(url, {
-        headers: {
-            "Authorization": `token ${token}`
-        }
-    })
-
-    .then(response => {
-        const data = response.data.public_repos;
-        const userRepos = document.querySelector("p#repos").textContent = `${data} Repositórios`;
-    })
-    .catch(error => alert(`Error: ${error}`))
-}
-
-GetUserRepos();
+GetGitHubApi(url, token);
 
 const scrollReveal = ScrollReveal({
     origin: "top",
