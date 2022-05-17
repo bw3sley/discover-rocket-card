@@ -1,10 +1,10 @@
 :root {
-    --bg: #000000;
-    --bg-card: #0E1218;
-    --text: #F1F1F1;
-    --img-profile: #8257e5;
-    --buttons: #FFF;
-    --border-button: #1A1A1A;
+    --bg: hsl(0, 0%, 0%);
+    --bg-card: hsl(216, 26%, 7%);
+    --text: hsl(0, 0%, 95%);
+    --img-profile: hsl(258, 73%, 62%);
+    --buttons: hsl(0, 0%, 100%);
+    --border-button: hsl(0, 0%, 10%);
 
     font-size: 62.5%;
 }
@@ -23,7 +23,7 @@ body {
     color: var(--text);
 }
 
-main .container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,14 +35,14 @@ main .container {
     text-align: center;
 }
 
-main .container .left-content p {
+.left-content p {
     font-size: 2rem;
     line-height: 3rem;
 
     margin-bottom: 2.4rem;
 }
 
-main .container .left-content .card {
+.card {
     background-color: var(--bg-card);
 
     width: 44rem;
@@ -53,7 +53,7 @@ main .container .left-content .card {
     border-radius: 5rem;
 }
 
-main .container .left-content .card .header {
+.card .header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -61,7 +61,7 @@ main .container .left-content .card .header {
     gap: 3.2rem;
 }
 
-main .container .left-content .card .header a {
+.card .header a {
     font-size: 2.4rem;
     line-height: 3.6rem;
     text-decoration: none;
@@ -74,11 +74,11 @@ main .container .left-content .card .header a {
     transition: 300ms;
 }
 
-main .container .left-content .card .header a:hover {
+.card .header a:hover {
     opacity: .7;
 }
 
-main .container .left-content .card .header .image-border {
+.card .header .image-border {
     border: 1px solid var(--text);
     border-radius: 5rem;
 
@@ -90,18 +90,18 @@ main .container .left-content .card .header .image-border {
     justify-content: center;
 }
 
-main .container .left-content .card .header .image-border img {
+.card .image-border img {
     width: 3.2rem;
     height: 3.2rem;
 }
 
-main .container .left-content .card .main {
+.card .main {
     position: relative;
 
     margin: 4rem 0;
 }
 
-main .container .left-content .card .stats {
+.card .stats {
     position: absolute;
 
     background-color: var(--bg);
@@ -115,18 +115,7 @@ main .container .left-content .card .stats {
     border-radius: 5rem;
 }
 
-main .container .left-content .card .stats .followers, main .container .left-content .card .stats .following, main .container .left-content .card .stats .repos, main .container .left-content .card .stats .company, main .container .left-content .card .stats .location {
-    display: flex;
-    gap: 3rem;
-}
-
-main .container .left-content .card img.user-image {
-    display: block;
-
-    transform: translateX(3.2rem);
-}
-
-main .container .left-content .card .stats p {
+.card .stats p {
     margin: 0;
 
     display: block;
@@ -134,7 +123,18 @@ main .container .left-content .card .stats p {
     font-size: 1.6rem;
 }
 
-main .container .left-content .card .footer {
+.stat {
+    display: flex;
+    gap: 3rem;
+}
+
+.card img.user-image {
+    display: block;
+
+    transform: translateX(4.2rem);
+}
+
+.card .footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -143,7 +143,7 @@ main .container .left-content .card .footer {
     margin: 8rem 0 0 0;
 }
 
-main .container .left-content .card .footer p {
+.card .footer p {
     font-size: 2rem;
     line-height: 3rem;
     text-transform: uppercase;
@@ -151,19 +151,19 @@ main .container .left-content .card .footer p {
     margin: 0;
 }
 
-main .container .left-content .card .footer img {
+.card .footer img {
     width: 2.8rem;
     height: 3.6rem;
 }
 
-main .container .right-content p {
+.right-content p {
     font-size: 2rem;
     line-height: 3rem;
 
     margin-bottom: 3.2rem;
 }
 
-main .container .right-content button {
+.right-content button {
     width: 23rem;
     height: 6rem;
 
@@ -181,6 +181,6 @@ main .container .right-content button {
     transition: 300ms;
 }
 
-main .container .right-content button:hover {
+.right-content button:hover {
     opacity: .7;
 }
