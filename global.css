@@ -184,3 +184,15 @@ body {
 .right-content button:hover {
     opacity: .7;
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+
+        gap: 6rem;
+    }
+
+    .right-content {
+        margin-bottom: 6rem;
+    }
+}
